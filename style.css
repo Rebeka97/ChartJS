@@ -1,0 +1,21 @@
+body {
+    background-image: linear-gradient(to right, rgb(33, 92, 202),deepskyblue,rgb(33, 92, 202));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color:white;
+    text-align: justify;
+}
+h1 {
+    text-align: center;
+    text-shadow: 3px 3px 5px rgba(7, 31, 99, 0.75);
+}
+#tartalom {
+    background-color: rgba(33, 92, 202, 0.623);
+    box-shadow: 8px 8px 5px 0px rgba(7, 31, 99, 0.75);
+    margin: auto;
+    margin-top: 4%;
+    width: 40%;
+    padding: 25px;
+    padding-top: 5px;
+    padding-bottom: 8px;
+}
