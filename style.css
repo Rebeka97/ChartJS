@@ -3,7 +3,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color:white;
-    text-align: justify;
 }
 h1 {
     text-align: center;
@@ -17,5 +16,12 @@ h1 {
     width: 40%;
     padding: 25px;
     padding-top: 5px;
-    padding-bottom: 8px;
+    padding-bottom: 4px;
+    min-height: min-content;
+    min-width: min-content;
+}
+
+.charts {
+    display: inline-block;
+    width: 49%; 
 }
