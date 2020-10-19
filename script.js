@@ -16,6 +16,9 @@ const config = {
     yAxes: [{
       ticks: {
         fontColor: "white",
+        beginAtZero: true,
+        suggestedMax: 275,
+        stepSize: 25
       }
     }]
   }
@@ -97,7 +100,7 @@ async function getData() {
   const rows = data.split('\n').slice(1);
   rows.forEach(row => {
     const cols = row.split(';');
-    let year = cols[0], festNum = cols[3], electionNum = cols[4];
+    const year = cols[0], festNum = cols[3], electionNum = cols[4];
     //years.push(year);
     octoberFest[year] = (octoberFest[year] || 0) + Number(festNum); //A '|| 0' a legelső érték miatt kell különben undefined + number = NaN
     federalElection[year] = (federalElection[year] || 0) + Number(electionNum);
