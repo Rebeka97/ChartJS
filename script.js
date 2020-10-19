@@ -1,4 +1,4 @@
-window.addEventListener('load', makeChart);
+window.addEventListener('load', makeCharts);
 
 let config = {
   legend: {
@@ -21,7 +21,7 @@ let config = {
   }
 };
 
-async function makeChart() {
+async function makeCharts() {
   const ctx = document.getElementById('myChart').getContext('2d');
   const ctxFest = document.getElementById('myChartFest').getContext('2d');
   const ctxElection = document.getElementById('myChartElection').getContext('2d');
@@ -94,11 +94,12 @@ async function getData() {
   const data = (await response.text()).trim();
   //const years = [];
   const octoberFest = {}, federalElection = {};
-  data.split('\n').slice(1).forEach(row => {
-    const fields = row.split(';');
-    let year = fields[0], festNum = fields[3], electionNum = fields[4];
+  const rows = data.split('\n').slice(1);
+  rows.forEach(row => {
+    const cols = row.split(';');
+    let year = cols[0], festNum = cols[3], electionNum = cols[4];
     //years.push(year);
-    octoberFest[year] = (octoberFest[year] || 0) + Number(festNum); //A '|| 0' a legelső érték miatt kell mert undefined + number = NaN
+    octoberFest[year] = (octoberFest[year] || 0) + Number(festNum); //A '|| 0' a legelső érték miatt kell különben undefined + number = NaN
     federalElection[year] = (federalElection[year] || 0) + Number(electionNum);
   });
   //yearsUnique = Array.from(new Set(years))
