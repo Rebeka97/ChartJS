@@ -1,6 +1,6 @@
 window.addEventListener('load', makeCharts);
 
-let config = {
+const config = {
   legend: {
     fontColor: "white",
     labels: {
